@@ -22,9 +22,11 @@ try:
         password="@Mikist@23.@Mikist@23.",
         auth_plugin='mysql_native_password'
     )
-except pymysql.MySQLError as err:
+except mysql.connector.Error as err:
         print(f"Error: {err}")
 
 cursor = conn.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
 print(f"Database 'alx_book_store' created successfully!") 
+
+
